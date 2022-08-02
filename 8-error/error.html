@@ -25,10 +25,38 @@
 
         }
 
-        
-        const result = MathUtil.sum(1,1,1,1,1);
-        console.info(result);
+        try {
+            const result = MathUtil.sum(1,1,1,1,1);
+            console.info(result);   
+            console.info('alfa');
+        } catch (error) {
+            console.info(`Terjadi error : ${error.message}`)
+        } finally {
+            console.info("Program selesai");
+        }
 
+        console.info('alfa');
+
+        class Counter {
+
+            #counter = 1;
+
+            next() {
+                try {
+                    return this.#counter;
+                } finally {
+                    this.#counter++;
+                }
+            }
+
+        }
+
+        const counter = new Counter();
+        console.info(counter.next());
+        console.info(counter.next());
+        console.info(counter.next());
+        console.info(counter.next());
+        console.info(counter.next());
     </script>
 </body>
 </html>
